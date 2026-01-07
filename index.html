@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🍄 Super Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Floating RPS Background -->
+<div class="rps-bg">
+  <div class="rps-item1" style="top: 12%; left: 13%;">🪨</div>
+  <div class="rps-item1" style="top: 70%; left: 13%; animation-delay: 2.5s;">📄</div>
+  <div class="rps-item1" style="top: 40%; left: 13%; animation-delay: 0.7s;">✂️</div>
+</div>
+
+<div class="rps-bg1">
+  <div class="rps-item" style="top: 50%; left: 23%;">🪨</div>
+  <div class="rps-item" style="top: 48%; left: 75%; animation-delay: 1s;">📄</div>
+  <div class="rps-item" style="top: 78%; left: 30%; animation-delay: 2s;">✂️</div>
+  <div class="rps-item" style="top: 25%; left: 55%; animation-delay: 1.5s;">🪨</div>
+  <div class="rps-item" style="top: 19%; left: 5%; animation-delay: 2.5s;">📄</div>
+  <div class="rps-item" style="top: 56%; left: 50%; animation-delay: 0.7s;">✂️</div>
+  <div class="rps-item" style="top: 20%; left: 30%; animation-delay: 1s;">📄</div>
+  <div class="rps-item" style="top: 1%; left: 25%; animation-delay: 0.7s;">✂️</div>
+  <div class="rps-item" style="top: 55%; left: 3%; animation-delay: 1.5s;">🪨</div>
+</div>
+
+  <div class="game-container">
+    <header>
+      <h1 class="title">🍄 Super Rock Paper Scissors 🍄</h1>
+      <p class="subtitle">Queue & Stack</p>
+    </header>
+
+    <main class="screen">
+      <div class="container">
+        <p>Choose 3 to 5 cards that will serve as your move!:</p>
+
+        <div class="buttons">
+          <button class="rock" onclick="addMove('Rock')"><span>🪨</span>Rock</button>
+          <button class="paper" onclick="addMove('Paper')"><span>📄</span>Paper</button>
+          <button class="scissors" onclick="addMove('Scissors')"><span>✂️</span>Scissors</button>
+        </div>
+
+        <p class = "move" id="playerMoves">Your Queue: []</p>
+
+        <!-- UNDO BUTTON -->
+        <button id="undoBtn" onclick="undoMove()" disabled>↩️ Undo (3)</button>
+
+        <button id="startBtn" onclick="startGame()" disabled>▶️ Start Game</button>
+      </div>
+
+      <div id="resultContainer" class="hidden">
+        <h2 id="roundDisplay"></h2>
+
+        <h2>Round Results</h2>
+        <div id="roundResults" class="rounds-container"></div>
+        <h3 id="finalResult"></h3>
+        <button class= "playagain" onclick="playAgain()">🔁 Play Again</button>
+      </div>
+    </main>
+
+    <footer>
+      <div class="mario-bricks"></div>
+    </footer>
+  </div>
+
+  <div id="battleLog" class="battle-log">
+    <h3>📜 Battle Log</h3>
+    <div id="logContent"></div>
+  </div>
+
+  <!-- Custom Undo Warning Popup -->
+<div id="undoWarning" class="undo-warning hidden">
+  <div class="undo-warning-box">
+    <span class="warning-icon">⚠️</span>
+    <p class="warning-text">You only have <b>1</b> undo remaining!</p>
+    <button onclick="closeUndoWarning()" class="warning-btn">OK</button>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
